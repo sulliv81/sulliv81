@@ -1,0 +1,16 @@
+1. Dylan Thompson and Bo Sullivan
+
+2. All parts of program functioning.
+
+3. Ways in which we tested our code were as follows:
+    i) We first started by testing forking to make sure we were able have concurrent clients able to connect with The
+        server and exchange guesses by loosely following a model of the demo_client/server.c programs.
+    ii) We also tested our concurrent games by both playing as player1/2 individually from  our local PC's while also
+        implementing our timeout feature.
+    iii) There was also a good amount of testing with sending the board back and forth and generating the board. This took
+    trial and error and a quick mistake we found was we weren't using the random seed for our variable to actually randomize 
+    board each time.
+
+4. The most challenging aspect of this project was implementing the sending of strings from client to server which ultimately
+    resulted in reading the guidelines more thoroughly in which case we learned we send the size of the guess first so we can easily
+    know how many bytes to read on the guess.

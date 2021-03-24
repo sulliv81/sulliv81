@@ -1,0 +1,23 @@
+1. Bo Sullivan
+2. I am skeptical that my timeouts are working correctly. I felt as if I understand conceptually and logically what was going on, but from some reason disconnects to my timeouts[510]
+array would create seg faults when I would disconnect that socket. I investigate and double checked it was connecting the proper socket given their respective status in the current chat
+session. I then double checked I was closing the correct socket and this alleviated the seg fault. For tracking time I created helper methods that I believe acheived their desired effect
+for keeping track of sockets descriptors and also updating time. I tested them and they seemed to be functional, but I felt like I got inadvertent timeouts. If you comment out the 5th arg
+to select to be NULL, the chat should function normally w/o timeouts if it ruins testing purposes. Aside from timeouts, I feel like the chat is working. The public and private messages are
+working, when users disconnect active observers are notified, etc. I also understood in regards to timesouts, when select returns 0, that is where the timeout occurs as it had nothing to
+read from it's socket it called. I still draw back to the seg fault however, which leads to me believe that a socket was being inadvertently closed, which reinforces my initial belief when
+going through my helper methods. There is also another occasional bug I would see and I feel as if I double checked the char* buffer and made good use of memset, but when the first
+participant joins and the message is displayed to the active observers, the User $Username has joined string prints with prepended junk. I would go through stages where this happened and
+did not happen, and it usually pertained to memset, but the last time I tested it, it was working FINE. I do think it was memset related and I went through and double checked so it should
+be good as of now.
+3. I tested my code rigorously through numerous cases. The assignment had numerous protocol to comply with, some simple examples are obeying name contraints, name lengths, message lengths,
+ntohs and htons conversions, up to 255 observer/participant connections, etc. To test these, I simply ran scripts to test concurrent connections. To test that content was beign converted 
+properly from nthos and htons it just took rigorous back and forth with compiling, sending, checking the buffers and continuing from there. I also spent much time using online compilers 
+to test quick functionality for strok and strcat things and make sure I was getting my desire effects for sending/receiving strings. The disconnection method became pretty beefy, but it 
+helped testing a lot. Anytime a recv statement returned 0 bytes read, I could plug in my disconnection method and it was working well. The indefinite loops of recv/send for clients and
+participants also took some brute force testing and once again doubling down on lengths being sent between network and host.
+4. The most challenging aspect of this assignment was learning select and how it interacts. I initially thought (before reading the assignment description) this would involve threading, 
+so I had to definitely commit time to understanding select. Another issue related to select was how you keep track of socket connections with FD_ISSET. Once I figured out how that worked,
+it made life a lot simpler. I feel like there was one more layer though, and that was the for loop for existing connections. I initially thought I needed a for loop for each port 
+connection and that created a headache until I got that. Other than that, the second ntohs and htonl conversions will get you from time to time, but it is a unique added challenge to be 
+weary of. All in all, this protocol had many layers, but it was a great, great challenge and a lot was learned about TCP socket programming and C as well.

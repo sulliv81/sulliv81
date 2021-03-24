@@ -1,0 +1,34 @@
+1. My understanding of what is being asked of me in program 3 is essentially an extension of program 2 but with some added levels of complexity. Those added levels are concepts such as: Storing unique strings in some structure without using a trie like in Program 2. There is also two types of clients, an active participant and an observer and they have different interactions per the protocol. Also, there is a limit to the quantity of each, which will be an added challenge to this. Then, this program is exchanging messages instead of single guesses but a lot of properties will hold over from Program 2 in terms of username validation being similar to validating a guess and having constraints that bind what username you can chose. There are also additional disconnect protocols on this implementation that work differently than Program 2 did in terms of timing and flow of events. This assignment is going to implement things like forking, multiple socket connections, and timing of actions. I will need to use functions like select(2) it also sounds like to help correctly execute actions in the effective order. There is also a private message and public message feature will have varying effects to the terminal output.
+
+2. My initial thoughts are a little bit of confusion. I am going to re-examine the assignment description thoroughly and then try to implement a rough outline in writing/pseudo-code similar in my approach to program 2. Initially, I anticipate the storing of unique names and validating unique names to be a challenge, unless using for loops over and over to check some struct is valid. I also am worried counting participant and observer sessions could present a challenge. Lastly, I am concerned with learning select() and just implementing it correctly to acheive the desired effect per the protocol. If I had to say what the most challenging would be at this point, with the limited knowledge I have, it will be likely making sure events occur at their correct timings per the protocol.
+
+3. A few resources I plan to draw from should I get stuck on something are:
+i) Dan's office hours
+ii) Piazza
+iii) Brian's office hours/extra session on Thursdays
+iv) Google/man pages as needed
+v) The textbook
+
+4) My plan for finishing this Program 3 is to commit daily a time of at least 60 minutes. My hope is with consistent effort I will maintain a good pace and encounter problems sooner than later which will help utilizing resources in a timely fashion and not getting overwhelmed towards the deadline. I plan on pushing daily after every bit of progress.
+
+I plan to start by:
+1) Pulling demo starter code from Brian's resources on Canvas
+2) Pull out unnecessary code and get all fields/attributes prepared
+3) Start forking connections to establish multiple clients
+4) Start username validation for users
+5) Explore the amount of connections opened and closing those properly
+6) Implement select so flow makes sense per protocol
+7) Test rigorously
+8) Git push along the way
+
+
+Sample Schedule:
+
+2/23/2021: 5:00 pm - 6:00 pm
+2/24/2021: 5:00 pm - 6:00 pm, submit plan.txt by 10 pm
+.	.	.	.
+.	.	.	.
+.	.	.	.
+.	.	.	.
+.	.	.	.
+3/13/2021: Submit entire project by 10 pm

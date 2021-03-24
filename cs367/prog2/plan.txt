@@ -1,0 +1,46 @@
+1. This program is checking the ability to implement a game similar to "Boggle" where you have a time limit to guess words,
+but in this program's instance, the clients will be doing it on a turn basis within the time limit. The clients will not be able
+to repeat characters already used, or repeat words. The winner is the first person to win 3 rounds out of 5. Points are scored from opponent's 
+invalid guesses or opponent time-outs. The server will use a trie.c file to implement the dictionary which a board will have letters to form words 
+to check against our trie. The board is length K (passed as parameter) and is variable in length---ASK BRIAN ABOUT THIS--if no vowel is generated. 
+Program is testing our ability to open and maintain connections through use of sockets between multiple clients with a server while using concurrency 
+to multi client-to-client games while also implementing the trie.
+
+
+2. We anticipate the following aspects to be challenging:
+
+2i) The trie implementation sounds like the most challenging aspect at this time. Our initial idea is to use an 
+implementation of a trie and cite them as desired per the Assignment Guidelines.
+2ii) We are worried about handling edge cases and following protocol, and if we will do enough in that regard.
+3iii) Typical C formatting and compiling issues
+
+
+3. Resources to utilize:
+
+3i) The textbook on establishing a connection from a client to server. In the 
+chapter on sockets, there is sample demo connection with
+accompanying code in C to reference also.
+
+3ii) We will also reference the demo_{client/server}.c files from our
+canvas home pages under useful resources. We think this will be helpful in 
+recalling to check for errors in our connection and data exchange process.
+
+3iii) We will also make use of office hours and Piazza as needed as we step
+through this project and hopefully can mitigate issues by starting sooner and 
+being proactive in testing robustness.
+
+4. For our trie implementation we are going to go with an open-source project from 
+https://www.techiedelight.com/trie-implementation-insert-search-delete/ which has the following methods: 
+{add, delete, make empty trie, clear trie, check if key is in trie}.
+
+5. Plans to Meet:
+
+evenings (~6-7) on days with class:
+2/02/2021 Have plan.txt done, push
+2/04/2021 establish connections between client1, client2, and server, push
+2/06/2021 implement trie and board funcionality, push
+2/08/2021 test concurrency, push
+2/09/2021 check implementation, check writeup.txt and push to github, push
+2/10/2021 Have initial implementation done to start fine-tuning, push
+2/10-20/2021 test, test, ask questions, check, test
+2/20/2021 submit at 10 pm, if not sooner 
