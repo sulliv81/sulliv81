@@ -1,0 +1,85 @@
+Activity Journal
+
+
+
+MY-SHELL.C - Douglas Woods and Daria Miller
+================================================================
+Start
+Estimated Time	03 00
+Plan: Think about how to loop over commands that are entered for the main function. We'll implement getinput
+to take in the user input and put it in a buffer of appropriate size using the argparse program. processline will be used on the command
+calls the user enters in getinput to call commands using the builtin program. We'll have to wait for the other
+programs to be written to actually test the functionality of myshell.c.
+
+
+Complete
+Actual Time	07 00
+Observations: We found that, as a group, working on different pieces of code at the same time can make it difficult to come together all at once, which is why we think our estimated time is much lower than the actual time.
+At the beginning, we thought myshell.c would be an easy program to work on - all you have to do is call the functions from argparse and builtin. Even though the program does that, there's much more it does, one good example
+being forking. When it came time for testing, we found getinput very troublesome and hard to sort out. For me (Doug) buffers and how to use them can be hard to wrap my head around sometimes. Even so, when we started testing,
+our whole group joined up and worked hard on this entire project for about four hours. Once we powered through the initial bugs, we were much more easily able to debug the rest of our codes' issues. Some issues we encountered,
+for example, included accidentally changing directories twice in an if statement, working with the buffer in myshell, and matching the behavior of the linux terminal in our own shell, with things like spacing and exact
+wording. After that, we think we have a great program and are very proud. We learned more about memory allocation and freeing memory, as well as forking and learning how to handle different forking cases. We also learned
+about how to properly use multiple branches in git, using dev branches to develop our sections of code, and then pushing that work up to the master branch.
+
+
+================================================================
+
+ARG-PARSE.C - Members: Lukas McIntosh, Cole DeMaris 
+================================================================
+Start
+Estimated Time	06 00
+Plan:
+    1. Create makefile to the final guidelines for later use.
+    2. Unzip Project1.zip into directory, attempt compilitation and make sure build is clean.
+    3. Implement file to have functionality for testing: example input->"./argparse arg1 arg2 ... argn", example output: "<argc>, <argv[Strings]>".
+    4. Each member performs unit testing for the other member's task. git add, git commit -m 'case:result' or 'tests passed', git push.
+    5. Check in with myshell.c group, assist with implementation as needed.
+    6. finalize project 1 submission, check with C Coding Standards for correctness.
+    7. Update Activity Journal and final commit.
+    
+Complete
+Actual Time	07 00
+Observations: There was some trouble in the beginning of argparse with
+String pointers and their proper usage, and a slight misunderstanding
+of how the int* argcp was supposed to work, the error was in how the
+variables would be used within argparse. The first implementation of
+argparse treated argcp as just an int input so the value was used, not
+set. This logic error was found shortly after we started to think about
+using argparse inside myshell. The several instances of malloc had some
+issues manifesting, as just standard char arrays and pointers were used.
+There was trouble with null return values due to the absence of malloc to
+allow the pointers to exist outside the scope of their respective functions.
+The big implementation went fairly well, with a few bumps that were ultamately
+figured out. We used the paired programming strategy to solid success,
+with both debugging and planning.
+
+================================================================
+
+BUILT-IN.C - Members: Thannaree Trairaweewat & Bo Sullivan
+
+================================================================
+Start: 10/28/2020
+Estimated Time	05 00
+Plan: First we will review the built in c functions such as, exit[value],
+pwd, and cd. We will make use of C's man pages, specifically man 3 atoi, 
+chdir(2) as well as many more. 
+(Order of implementation, testing approach, etc.)
+
+Complete: 11/11/2020
+Actual Time	05 00
+Observations: We felt that the actual implementation of builtin.c was fairly
+straightforward with exitProgram, cd, and pwd. We had moments of confusion
+when testing the program alone with a main method and how we would passed
+arguments to the builtin functions. Once we learned that and could see that
+our methods were acheiving the desired functionality, things started to make 
+a lot more sense. We also had a funny testing instance where we thought things
+were working flawlessly by running our builtin file from the command line,
+but it turned out bash has it's own builtin feature that operates the exact
+same way we want ours to work within OUR shell. Also, there was some shuffling
+that had to be done with args when combining all pieces of myshell, builtin,
+and argparse. Once everything was being called properly and types matched though,
+testing seemed to go a lot smoother.
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+
+================================================================
