@@ -1,0 +1,46 @@
+L.1 Ivan Jenson, Maxwell Lisaius, Bo Sullivan
+
+L.2
+
+L.3 ~5
+
+L.4 The __init__ constructor is where we instantiate our weights and assign them
+to member variables.
+ Within this method, we reference the upser class and then we set our
+initial weights to 0 and we also create of range of exponents from 0 to number
+of dimenions + 1.
+
+L.5 It is making a prediction and making a forward pass. It's a sum of axis=1, columnwise. 
+It's broadcasting the weights and those exponents as powers to all of the weight. It is 
+attempting to run the features through the next to generate an output, it uses the weights as the inputs.
+The forward function gets called on line 70 of demo_lab3.py.
+
+L.6 In pytorch, this will help set the gradients to zero before starting back propogration due to 
+the nature in which pytorch aggregates gradients on backwards passes.
+
+L.7 In pytorch, loss.backwards() will compute the value of the loss function of the gradient. We need to know
+the gradient to start the stepping.
+
+L.8 This is the gradient descent over the optimizer. This is the actual descent being done to fit the model to the
+outputs. Trying to find appropriate minimum here.
+
+L.9 Our train RMSE appears to be converging to .987  and the dev is convering to 1.001 when going from D = 3 -> D = 2. 
+When D changed to 10. Comparing training to dev sets the RMSE's were generalizing more poorly as we increaded Polynomial order.
+Dev should be represtative of the unseen data. More epochs = more iteration which will result in worse run time.  
+
+L.10 Increasing high order polynomial, which also notably significantly increased run time, will generate a highly overfit model. Not
+generalizing well as the training data is not converging to the validation set.
+
+L.11 The learning rate has a powerful effect on our accuracies. For our training modelwe found 0.01 and between 0.05 to be most
+ optimal.
+
+L.12 The lambda coefficient has a powererful effect also on our training and dev accuracy. It seems that the values which are 
+lower can help optimize slightly a higher learning rate  only marginally). But a high lambda, thinking in terms of > 0.05 really
+has a profound effect on lowering the dev accuracy. Overall, it seems that the lower the lambda the stronger our dev accuracy was.
+It seems lambda helps you get a higher accuracy at a quicker rate, which ponders the question if this allows for a higher learning
+rate.
+
+L.13 There seems to be a strong correlation with a lower lambda and reporting stronger accuracy results. But we noticed it 
+would work better than being defaulted to 0 because it could allow for larger learning rates. In terms of epochs, we noticed the 
+more epochs we ran, the results trended slightly stronger. We did well with ~250, but you could turn down the learning rate if you 
+wanted and increase epochs.

@@ -1,0 +1,17 @@
+program: task1wandb.py
+method: bayes
+metric:
+  name: val_loss
+  goal: minimize
+parameters:
+  learning_rate:
+    min: 0.00001
+    max: 0.001
+  optimizer:
+    values: ["adam", "adagrad", "adadelta"]
+  clip:
+    values: [15000, 17500, 20000, 22500, 25000]
+  mb:
+    values: [12, 18, 22, 26, 30, 34, 40, 46, 54, 60, 72]
+  epochs:
+    values: [50]

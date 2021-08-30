@@ -1,0 +1,27 @@
+L.1) Max Lisaius and Bo Sullivan 
+L.2) All were present
+L.3) 7 hours to complete.
+L.4) As training progresses it does appear to be learning to cluster speakers. As the training progresses that labled points separate themselves out into their respective classes/ piles. The loss roughly ends up around 0.01. 
+
+L.5) Line 259 sets the device for torch to use to be a GPU if it is present, if not a CPU. This makes it so that on the other lines when you call .to(device), it will load that element of the model or data onto the VRAM of your GPU so that you can take advantage of the processing power offered. If you comment out one of the to lines it causes the program to crash, beacuse it will try to do operations between data that is loaded on RAM and data that is loaded in VRAM. (If a a GPU is present)
+
+L.6) The main difference between a nn.Parameter and a nn.Variable is that the parameter will be added to the model's parameter list and will not need to be manually cached. This also means that the parameter will be automatically optimized, and in the case of RNN's a nn.Parameter is often used to hold the last hidden state of an RNN. Parameters are limited to the modules in which they are defined, which is good when you want to build your custom modules. 
+
+L.7) We call this orch.nn.init.xavier_uniform to fill the torch.nn.Parameter with a uniform distribution described in “Understanding the difficulty of training deep feedforward neural networks” - Glorot, X. & Bengio, Y. (2010). This also known as the Glorot initialization.
+
+L.8) torch.nn.PariwiseDistance computes the batchwise pairwise distance between vectors v1, v2 using the p-norm. The constructor takes a float p (the norm degree), a optional float eps or a small value to avoid division by zero, and an optional bool keepdim that determins whether or not to keep the vector dimension. When it is called it takes two vectors, in our case 'x.repeat(self.Ntr,1)' as our prediction, and self.proxies as the last hidden state of the RNN. This is used to compute our loss. 
+
+L.9) torch.nn.chunk splits a tensor  into specific number  of chunks. Each chunk is a view of the input tensor. The constructor takes in an input tensor, the number of chunks
+to return, and lastly the dimesion along which to split the tensor into the view.
+
+L.10) Forward is returning the prediction from both directions in the bidirectional LTSM from the split
+of torch.chunk and concatenating those together with the mean of the output as a whole.
+
+L.11) Computes the negative distance between input repeated using torch.repeat and the last hidden state from self.proxies
+and reshapes the via a flatten and then computes their cross entropy loss on classification.
+
+L.12) StepLR will decay the learning rate of each parameter group by gamma every step size epochs. This is used in conjunction with the optimizer as stepLr needs an optimizer when it's [scheduler] constructed. Whenver you want to use the scheduler, you call scheduler.step() and scheduler.get_lr(). 
+
+L.13) The hardest part about implementing the Pytorch Lightning to the Tiny_timy dataset was adjusting the reshaping of tensors in the forward function. We also had a slower output for clustering(converging) of the speakers compared to the m6_demo.py file.
+
+L.14) Training on GPU offers significant increases in iterations/second. It appears in our instance, to train roughly 3x-4x faster than on CPU. Iterations/second on CPU are rather low (~5-6) while iterations on GPU can end up around ~24 iterations/second.

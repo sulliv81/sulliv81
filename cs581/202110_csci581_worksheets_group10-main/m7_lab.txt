@@ -1,0 +1,33 @@
+L.1) Max Lisaius and Bo Sullivan 
+L.2) All were present
+L.3) 4 hours to complete.
+L.4) Yes, LineByLineTextDataset is a child class of torch.utils.data.Dataset
+https://github.com/huggingface/transformers/blob/master/src/transformers/data/datasets/language_modeling.py
+L.5) Dataset[0] should return a dictionary with a string input as a key and a tensor as a value. The Dataset[0] will return the
+first batch encoding from the tokenizer with given the string "input_ids".
+L.6) 
+
+DataCollaterForSeq2Seq:
+The data collater dynamically pads the input recieved as well as the labels. This is useful for 'label smoothing' to avoid calculating loss twice. It is noted that this is especially useful to enable the use of Tensor Cores on NVIDIA hardware with compute capability.
+
+DataCollatorForWholeWordMask
+
+This data collator collates batches of tensors, "honoring" their tokenizer's pad_token. It preprocesses batches for masked language modeling. It gets 0/1 labels for masked tokens with whole word mask proxy, and prepares masked tokens inputs/labels for masked language modeling.
+
+DataCollatorForSOP
+
+This data collator is used for sentence order prediction tasks. It collates batches of tensors, "honoring" their tokenizers pad_token as we say in DataCollatorForWholeWordMask. It preprocesses batches for both masked language modeling and sentence order prediction.
+
+
+L.7)
+After 30 minutes on a CF420 machine we got:
+Epoch: 0.03
+Loss: 7.28
+
+L.8)
+We were able to load a maximum batch size of 53 onto the csci cluster.
+
+L.9)
+To train on the cluster it took approximately 1 hour and 55 minutes.
+    
+

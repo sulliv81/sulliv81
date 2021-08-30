@@ -1,0 +1,45 @@
+L.1) Bo Sullivan, Maxwell Lisaius, Ivan Jensen
+
+L.2) NA (Everyone was present whenever we worked on the lab)
+
+L.3) [How much time did it took your group to complete this assignment (in hour$
+    12
+L.4) The images come in as PILImages in range [0, 1]. Transform turns them into Tensors and normalize them to be between [-1, 1].
+
+L.5) torch.save is saving our model to a file when we are done trainig it. torch.load loads our model from a file, so that we can use a pre-trained model to initialize the network or in our case the tutorial saves and loads the model for educational purposes.
+
+L.6)
+    __init__: Init acts as a contructor and initilizes the DataModule.
+
+    prepare_data: It looks to see if we have dataset, if not it downloads the dataset into the current working directory
+
+    setup: If step == 'fit' then setup runs the transform to convert in the  PILImages into tensors and normalizes them, then splits the data into a training set and validation set. If step == 'test' it loads the test set data and transforms it the same way.
+
+    train_dataloader: It places the training set into a dataloader and sets the parameters
+
+    val_dataloader: It places the validation set into a dataloader and sets the parameters
+
+    test_dataloader: It places the testing set into a dataloader and sets the parameters
+
+L.7)
+
+    __init__: Init acts as a constructor for a multinomial logistic regression LightningModule. It sets a linear layer, the learning rate, and sets the accuracy metric to one imported from pytorch_lightning.metrics.
+
+    forward: The forward pass grabs the batch size from the tensor, and then flattens the tensor with view(). The flattened tensor is then passed through the linear layer created in __init__.
+
+    eval_batch: Eval batch takes in the batch tensor and the batch index from DataLoader and passes the batch through the model the model to make a prediction. After that it calculates and returns the accuracy and loss.
+
+    training_step: Training step makes a prediction using the batch and batch index passed in and then logs the information returned from eval_batch(). This logs the values with the keys "train_loss" and "train_acc".
+
+    validation_step: This does the same thing as the training step, except instead uses the the logging keys "val_loss" and "val_acc".
+
+    test_step: This does the same thing as the training step and validation step, except instead uses the the logging keys "test_loss" and "test_acc".
+
+    configure_optimizers: Configure optimizer sets the optimizer to Adam (or the chosen optimizer from the command line arguments) with the correct parameters and learning rate.
+
+L.8)
+    One of the sucessful architectures that we tried closely resembles AlexNet. The main idea of AlexNet is it has 5 Conv2d layers, with MaxPool2d and ReLU activations in-between. Once the conv layers are over, there is an AdaptiveAvgPool layer followed 
+    by linear layers with dropout and more ReLU activations. With a learning rate of 0.0005, 100 epochs, minibatch size of 512, and the adam optimizer, we achieved validation accuracy of 69.4% and test accuracy of 68.38%. We also implemented a model with 4 Conv2d 
+    layers with ReLU activations and a MaxPool2d done after the first ReLU activation and ending with lineary layers also with ReLU activations. Using a learning rate of 0.005, mb size of 128, epochs of 100, and the adagrad optimizer, at 100 epochs we saw test 
+    accuracy of 74.2% with test loss of .8408 which was a significant improvement on test loss. Additionally, there were instances the SGD optimizer would achieve low 70% test accuracy. While these were not the highest accuracies on an established dataset, with 
+    our limited time and resorces this proves that our approach could be fine tuned further to achieve better results. 

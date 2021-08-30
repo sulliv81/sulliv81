@@ -1,0 +1,33 @@
+L.1) Ivan Jensen, Bo Sullivan, Maxwell Lisaius
+
+L.2) NA (Everyone was present whenever we worked on the lab)
+
+L.3) [How much time did it took your group to complete this assignment (in hour$
+    - Wednesday (1/27/21): Worked on for approximately 4 hours
+    - Thursday (1/28/21): 2 hours
+    - Friday (1/29/21): 1 hour
+
+L.4) For our model  the best dev accuracy we attained was ~95%. From extensive
+hyperparameter tuning, we found that a lowered learning rate (~0.01-0.03) in
+combination  with ~200 epochs and a n-layer specifier of "100x5,20x2" denoting
+7 hidden layers, the first 5 with 100 units, and the last 2 with a hidden unit
+size of 20 while using the "adam" optimizer. Adam on average performed as the
+best optimizer.
+
+L.5) The ndarray is converted to a tensor of the desired size when collate_fn is called within the DataLoader. collate_fn is called whenever we iterate or request data from the DataLoader
+
+L.6)    num_workers: This is the number of subprocesses used for data loading. If zero is used 
+                     it will be loaded in the main process
+
+        shuffle:    flag set, True denotes to have data reshuffled at every epoch, False 
+                    does not do any shuffling
+        
+        pin_memory: flag set, True denotes data loader will copy tensors
+                    into CUDA pinned memory before returning them. If custom data element
+                    or collate_fn returns a batch of a custom data type. 
+                    
+        drop_last: flag set, True denotes whether or not to drop the last batch IF it
+                    is incomplete, e.g. the dataset size is not divisible by the
+                    batch size. If False and the dataset size is not divisible by the batch size, 
+                    the last batch will be smaller than the rest of the batches. The default is 
+                    set to False
