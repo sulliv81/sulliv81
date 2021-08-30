@@ -1,0 +1,38 @@
+Activity Journal
+
+Name:Bo Sullivan
+
+================================================================
+Start: 2:20 pm 10/12/2020
+Estimated Time	02 00
+Plan:First I will review the implementation of calls open, read write and close functions. I am vaguely familiar and think I know how to do it, but am going to refresh just in case.
+
+Then, once I can establish the open and read, and am going to parse the input file one chat at a time and as I do that, consider something like a while/for loop to iterate over the elements and change their value by increasing 100 ASCI digits and write them to a new file with a name that adds _enc.
+
+Then I will right a counter/reversed version of this loop that does same thing, takes the input txt and parses the info and then decrements their values by 100 and that should result in the original file. This will also append the string _dec to the file name it writes to.
+
+Consider approach, review old notes, and then start testing program to get char count going with wc also.
+
+
+Complete 9:15 pm
+Actual Time: 04 00
+Observations:After re-reading throug the assignment are seeing that I could not use things like fgets() I realized I was in a bit of trouble. I probably spent the most time reading
+the man pages for open, read, write, and close than anything for this assignment. Learning that I had to put in flags and permissions was also troubling to get through but some
+brute force testing finally got me through it in addition to more reading.
+
+The ASCI conversion was probably the easier part of this assignment, just increasing values by 100 or decreasing by 100.
+
+Once I was able to make sense of the flow, I realized that the assignment was asking for a more basic and less convoluted approach that I was trying to conjure in my mind, which
+is always refreshing to see the expected result is contrite and effective and not overly critical.
+
+One problem I encountered was over writing to the outputFile and I was able to fix thsi by changing the write calls to only right to waht the readByte var was checking.
+
+Also doing troubleshooting like file size being a larger than buffer, or invalid arguments being passed
+took me a minute to test for, adds for better readability and error handling.
+
+
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+
+
+================================================================
+

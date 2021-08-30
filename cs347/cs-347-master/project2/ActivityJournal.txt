@@ -1,0 +1,39 @@
+Activity Journal
+
+Name: Bo Sullivan
+
+================================================================
+Start: 12/01/2020
+Estimated Time	10 00
+Plan: My goal is to get read done first. I reckon if I understand read, then I
+can implement write easily. I beleive  with fscanf and fread it will be an easy task,
+but nothing in C ever seems easy upon implementation :). If I get read, I will move to write
+to check if that works. I truly anticipate there to be the most issues with read.
+Next will become the threadfn. I don't think that will be too terible, there will be alot
+of syntax to be careful with calling to structs and casts to the paramter structs. I think
+the formula won't be too bad as the professor supplied it with us and all the for loops.
+The threads will of course be challenging and I will have to account for this by being cautious
+and reading up. I am going to implement them with a for loop and then join them later with a for loop.
+It actually sounds like a fun task and time to get rolling. Check back in for the completion
+to see what happens next!
+(Order of implementation, testing approach, etc.)
+
+Complete 12/10/2020
+Actual Time	35 00
+Observations: No joke...35 hours of trying to track down seg faults and fix read. It was quite the
+adventure. Learning a lot of joys about programming. At the end, I still could not figure out what plagued
+my project so close and I truly feel something is ever so slightly off with a pointer or something that
+is causing the final output to be distorted. Observations include coding in c is an arduous labor of love
+but the better you get at debugging the smoother life can become. Stepping through gdb is such a useful
+talent that I plan to keep moving on. Also the threading was probably the most easy to write method
+for the entire assignment making the appropriate calls and populating the struct array as I went.
+Overall this was a time consuming project and I definitely learned a lot from it.
+
+Update: 11:37 pm day of due date. Huge thanks to Jack for emailing. Aftering cleaning up some errors
+I saw that I also was not returning img->image in read and this was the hugest cause of errors in
+reading images. Once I fixed that anc cleaned up the errors for compiling and readabilty, it worked!
+Thank you so much for emailing me back, saved the night!
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+
+
+================================================================

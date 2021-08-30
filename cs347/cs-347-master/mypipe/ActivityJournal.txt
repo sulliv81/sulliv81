@@ -1,0 +1,28 @@
+Activity Journal
+
+Name: Bo Sullivan
+
+================================================================
+Start: 11/17/2020
+Estimated Time	04 00
+Plan: First I plan to rewatch the zoom lecture. The assignment hits at strsep
+so I will be visiting the man pages. It also looks like I will need strdup and
+possibly strtok. I am thinking the challenge will be inparsing the input into smaller
+inputs. Perhaps while loops and strtok will help with parsing smaller lines or char
+arrays. I also need to do some research on forking and how this will relate to
+the parent or child process and piping in general.
+(Order of implementation, testing approach, etc.)
+
+Complete 11/19/2020
+Actual Time	05 00
+Observations: This proved to be more challenging than I thought and took a lot more
+thought. Getting strsep to work and then remembering the arguments could be a list
+of commands was forgotten until late today. I decided to parse the lhs and rhs args
+by using strdup and strsep. Then one will represent a left and right side and to parse
+those, I then go through with strtok and a while loop to whittle them away into a 
+char array. After that, I do checks for NULL args being passed and if so run the
+default ones. I am getting a seg fault though and I feel like it's coming from the fork but I am unsure exactly where.
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+
+
+================================================================

@@ -1,0 +1,19 @@
+Activity Journal
+
+Name:Bo Sullivan
+
+================================================================
+Start: 2:20 pm 10/6/2020
+Estimated Time	HH MM: 01 00
+Plan:Consider approach, review old notes, and then start testing program to get char count going with wc also
+(Order of implementation, testing approach, etc.)
+
+Complete 2:05 pm 10/11/2020
+Actual Time	HH MM 01 30
+Observations: Using c's get char was super convenient for this. Also being able to use
+isspace() was super convenient. I had to do some research as to why my word count
+could never be perfect, and that helped a lot to see why the count was higher than it should have been.
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+
+
+================================================================

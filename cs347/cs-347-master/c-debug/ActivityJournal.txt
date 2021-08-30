@@ -1,0 +1,17 @@
+Activity Journal
+
+Name:Bo Sullivan
+
+================================================================
+Start--prime_standard.c
+Estimated Time	HH MM--02 00
+Plan: Edit prime_standard.c to implement proper coding guidelines and comply with professor requirements also.
+(Order of implementation, testing approach, etc.)
+
+Complete--prime_standard.c completed
+Actual Time	HH MM 00 30
+Observations: Sometimes you must be careful with naming conventions and make sure consistency is practiced. Organized and clean code helps others to understand the code better, which is important should other users ever need to interact with my programming.
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+
+
+================================================================

@@ -1,0 +1,36 @@
+Activity Journal
+
+Name: Bo Sullivan
+
+================================================================
+Start: 10/19/2020
+Estimated Time	03 00
+Plan: My plan of attack is to first and always start by reviewing the in class
+lectures and slides.
+
+FileStat looks like I need to understand a few concepts. First we need to return the file type.
+I am thinking their is going to be a trick with a built in function for c that should
+maket this part fairly pain-free.
+
+Next I need to get the time of last access. I once again think that this should
+not be inherently difficult, but will require some proper C syntax to get working.
+
+Lastly, I need to list the read, write, and execute permissions. I know them from 
+a list, but perhaps there will be an easier method to do this. The review notes the professor dicussed on 10/19 should help with this.
+(Order of implementation, testing approach, etc.)
+
+Complete 10/22/2020
+Actual Time	02 00
+Observations: Making use of the struct stat was highly beneficial in solving this assignment.
+After doing more manual page reads on stat(), lnode(), ctime(), and stat's mode features,
+it opened the flood gates on this assignment. Making use printf commands with ternary conditionals 
+really helped with printing the permissions as well as getting the file type. I hadn't used ternary
+operators in quite some time, so it was fun to reimplement the thought process. I added a check
+for a file or directory input and an accompanying messaged incase the user fails to run with 
+the proper arguments. I had a heck of a time with st_atime and once I discovered printing it was
+made easier by ctime(), life was great. Biggest obstacle was definitely the access time and
+once you saw how to use stat and pull inforation, it was smooth sailing.
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+
+
+================================================================

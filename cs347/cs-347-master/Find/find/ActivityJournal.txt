@@ -1,0 +1,20 @@
+Activity Journal
+
+Name: Bo Sullivan
+
+================================================================
+Start: Thursday 12:00 noon
+Estimated Time	HH MM 01 00 1 hour
+Plan: Research the review via canvas and then slowly try to implement.
+Refresh on pointers as well. Implement on method at a time, in order.
+(Order of implementation, testing approach, etc.)
+
+Complete Thursday 8:00 pm
+Actual Time	HH MM 02 00 2 hours
+Observations: Pointers are a lot more tricky than I recall and 
+definitely some trial and error there when testing. Still confused
+on substr find. I did not quite manage to get substring.
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+
+
+================================================================
