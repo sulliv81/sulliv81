@@ -1,0 +1,32 @@
+1)
+h(x) = x
+a) Is valid
+b) Fast
+c) Will not change on size of table as x could be even or odd, thus size could need to be even or odd.
+
+h(x) = 2x
+a) is valid
+b) Fast
+c) Anything by 2 will be even. 2 * k+1 or 2 * k = 2(2k+1) or 2(2k) which is all divisible by two.
+So we'd have an extra slot in an odd sized table.
+
+h(x) = x * x
+a) Is valid
+b) Constant hash
+c) x * x could be even or odd as odd * odd = odd. k+1 * k+1 = 2(k)+1, which is odd.
+
+h(x) = x % 10
+a) Is valid
+b) Will spread out between many buckets
+c) Size would not matter by even or odd definition.
+
+h(x) = x * random.nextInt()
+a) Is Not Valid--Random would produce 2 different x's
+b) Many different values and fast
+c) random int would not matter with even or odd size as we will not know it would only be even or odd.
+
+
+2) If a class's hashCode is not overridden, it will return the object's memory address.
+3a) You must absolutely override the hashCode() method also if you've overriden the equals() method. The default equals() method only compares object memory locations, same as the == operator. If we are checking for object equivalence in an overridden equals() method we are checking for state equivalence. A correct equals() implementation should be reflexive, symmetric and transitive. Equal objects must have the same hashCode, the reverse is not true. JVM will assign a unique number to help find the object and hashCode is not the memory address, but the default equals() method will check the reference. So we must override to maintain balance as we've changed what equals method does.
+3b) Assuming we have placed an @Override above the hashCode function, options i would be a valid implementation as it is going to hash their first and last name and then combine them to create a unique hash that is attributable only to that single student. Option iii would also be valid, as wNums are considered unique. Option iv is valid as hashcode want's to return an immutable object, as Java Integers are. So it's good, but not going to be our best option. Option i could be problematic if you had two students with the same and first name, however. Option ii would be okay also as you are getting a wNum. the lastLogin could be irrelavent to the hash.
+3c) Option iii for reasons stated in 3b where it be unique to a student's first and last name.
