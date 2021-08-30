@@ -1,0 +1,29 @@
+Plan:
+
+1.  A one paragraph summary of the program in your own words.  What is being asked of you?  What will you implement in this assignment?
+We are writing a program that will have 7 functions and 1 optional/extra credit function to analyse and manipulate grammar
+of the form: (define G3 ’((S A B C)
+            (a b c d e f)
+            (((S) (A a b c B d e f C) ())
+            ((A) (a B) (e C) (a))
+            ((B) (b C) (d))
+            ((C) (d) ()))
+            S)).
+
+    We then need to return boolean values to whether or not grammars passed obey rules of context-free, formal, and extended grammar.
+    For example, in checking for a formal grammar we need to check length of four, then check that all but the last element of the grammar is itself a list. We also need to check that the last element(start state) is not a list. Next, we check that the rules in the grammar are a list of lists. Formal also requires to check that the alphabet's intersection with the variables is equal to the null set. Lasty, we'll check that the start sate is an element of the alphabet. So, these checks will help return the boolean value as to whether or not this is a formal grammar. We will have to refine our understanding and become familiar with the rules of right-regular and then context-free grammars and apply them in the same manner as formal. Lastly, we will attempt the extra-credit if everything is done, which seems to be a matter of keeping good track of strings with recursive calls and parsing.
+
+2.  Your thoughts (a few sentences) on what you anticipate being the most challenging aspect of the assignment. What functions like map will you use, and how you might combine them?
+The most challenging part of this will likely be understanding 'grammar' itself, because right now we are having trouble understanding the problem but once we understand the problem and all of the rules of 'grammar' implementing the solution shouldn't be too difficult. Map will probably be pretty useful, as well as car, cdr, and cons because it looks like we are dealing with nested lists. Using recursion will also be a proven tactic in implementation of this program.
+
+3.  A list of at least three resources you plan to draw from if you get stuck on something.
+    1. Canvas resources (Book, Modules, etc.)
+    2. Piazza
+    3. Instructors and Professor Office Hours
+    4. WWU CS Mentors Monday-Friday 4-7 p.m. as an additional resource
+
+4.  If working in a pair, your plan for meeting early and often enough to complete the as-signment  by  the  deadline  (e.g.   what  days/times  work  for  both  of  you  to  meet?,  what communication tool will you use to share the screen?)
+We will likely coordinate meetings though Discord and meet and share screens via Zoom. We are both available to meet after 3:30pm most days.
+
+
+
